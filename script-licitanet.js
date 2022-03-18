@@ -1,3 +1,7 @@
+// Selectors
+// #disputa > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.animated.flash > span
+// #pendente > table > tbody > tr:nth-child(2) > td:nth-child(7) > span.font-weight-bold
+
 // Start
 var tabelaEL2 = document.querySelectorAll('#pendente > table > tbody > tr');
 var tdArray = [...tabelaEL2];
@@ -33,14 +37,6 @@ function parseRealToFLoat(str) {
 
     return parseInt(totalStr)
 }
-// #disputa > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.animated.flash > span
-// '#pendente > table > tbody > tr:nth-child(2) > td:nth-child(7) > span.font-weight-bold'
-// '#disputa > table > tbody > tr:nth-child(2) > td:nth-child(7) > span.font-weight-bold'
-// #disputa > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.animated.flash > span
-
-//#disputa > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.animated.flash > span
-
-//#pendente > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.font-weight-bold
 
 let div = document.createElement("div")
 div.style.cssText = 'position: fixed; right: 0; bottom: 0; display: flex; flex-direction: column'
