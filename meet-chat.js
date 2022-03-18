@@ -1,6 +1,14 @@
 const listaDeMsg = document.querySelector('.z38b6').childNodes
+
 // const meuinput = document.querySelector('.KHxj8b.tL9Q4c')
 // const buttonEl = document.querySelector('.VfPpkd-kBDsod')
+// create a keydown event    
+// var e = new KeyboardEvent("keypress", {key: 'Enter'});
+
+// document.body.addEventListener('keypress', (e) => {
+//     if (e.key == 'Enter') console.log('Entero')
+// })
+
 
 let todosUsers = []
 let todasMensagens = []
@@ -30,22 +38,15 @@ const pegaMensagens = () => {
     }
 
     // console.log(todosUsers)
-    let diff = checkDiff(todasMensagens.length, prevQtdTotalMsg)
+    let diff = checkDiff(prevQtdTotalMsg, todasMensagens.length)
     if (diff !== 0) {
         checkNovasMsg(todasMensagens, diff);
     }
     
 }
 
-function start() {
-    intervalo = setInterval(pegaMensagens, 250);
-}
 
-function stop() {
-    clearInterval(intervalo)
-}
-
-function checkDiff(numeroAtualMsg, numeroAntigoMsg) {
+function checkDiff(numeroAntigoMsg, numeroAtualMsg) {
     let diff = 0;
     if (numeroAtualMsg === numeroAntigoMsg) {
         // console.log('nada novo')
@@ -57,6 +58,7 @@ function checkDiff(numeroAtualMsg, numeroAntigoMsg) {
     return diff;
 }
 
+// Check content of the newer messages
 function checkNovasMsg(array, diff) {
     let searchArray = array.slice(array.length - diff)
     for (let msg of searchArray) {
@@ -70,7 +72,18 @@ function checkNovasMsg(array, diff) {
             case 'presente':
                 console.log('Hora da chamada');
                 break;
-
+            case 'igor':
+                console.log('A wild Igor appears!');
+                break;
         }
     }
+}
+
+// set Interval 250ms
+function start() {
+    intervalo = setInterval(pegaMensagens, 250);
+}
+
+function stop() {
+    clearInterval(intervalo)
 }
