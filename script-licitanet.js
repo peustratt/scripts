@@ -1,25 +1,29 @@
 // Selectors
 // #disputa > table > tbody > tr:nth-child(1) > td:nth-child(7) > span.animated.flash > span
 // #pendente > table > tbody > tr:nth-child(2) > td:nth-child(7) > span.font-weight-bold
+// 
 
 // Start
-var tabelaEL2 = document.querySelectorAll('#pendente > table > tbody > tr');
+var listQuery = '#randomico > table > tbody > tr'
+var textQuery = 'td:nth-child(7) > span.animated.flash > span'
+
+var tabelaEL2 = document.querySelectorAll(listQuery);
 var tdArray = [...tabelaEL2];
-var content = tdArray.map(filho => filho.querySelector('td:nth-child(7) > span.font-weight-bold').textContent)
+var content = tdArray.map(filho => filho.querySelector(textQuery).textContent)
 
 var interval = setInterval(start, 500);
 
 function start() {
-    tabelaEL2 = document.querySelectorAll('#pendente > table > tbody > tr');
+    tabelaEL2 = document.querySelectorAll(listQuery);
     tdArray = [...tabelaEL2];
     tdArray.forEach((item, index) => {
-        let stringReal = item.querySelector('td:nth-child(7) > span.font-weight-bold').textContent
+        let stringReal = item.querySelector(textQuery).textContent
         if (stringReal != content[index]) {
-            console.log(`lote ${index + 1}: `, parseRealToFLoat(stringReal) - 10)
+            console.log(`lote ${index + 1}: `, parseRealToFLoat(stringReal) - (Math.floor(Math.random() * 15) + 10))
         }
         // console.log(stringReal, content[index])
     })
-    content = tdArray.map(filho => filho.querySelector('td:nth-child(7) > span.font-weight-bold').textContent)
+    content = tdArray.map(filho => filho.querySelector(textQuery).textContent)
 }
 // Stop
 function stop() {
