@@ -6,11 +6,13 @@
 // Start
 var listQuery = '#randomico > table > tbody > tr'
 var textQuery = 'td:nth-child(7) > span.animated.flash > span'
-
+// List of table rows
 var tabelaEL2 = document.querySelectorAll(listQuery);
+// Copy List
 var tdArray = [...tabelaEL2];
+// Get a array of the prices
 var content = tdArray.map(filho => filho.querySelector(textQuery).textContent)
-
+// Create Interval starting the program!
 var interval = setInterval(start, 500);
 
 function start() {
@@ -19,7 +21,7 @@ function start() {
     tdArray.forEach((item, index) => {
         let stringReal = item.querySelector(textQuery).textContent
         if (stringReal != content[index]) {
-            console.log(`lote ${index + 1}: `, parseRealToFLoat(stringReal) - (Math.floor(Math.random() * 15) + 10))
+            console.log(`lote ${index + 1}: `, parseRealToFLoat(stringReal) - (Math.floor(Math.random() * 20) + 10))
         }
         // console.log(stringReal, content[index])
     })
