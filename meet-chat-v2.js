@@ -1,6 +1,10 @@
 const listaDeMsg = document.querySelector('.z38b6').childNodes
 // Classe para descobrir ativação do MIC
-let mic = document.querySelector(".IYwVEf.aC0Bke")
+// let mic = document.querySelector(".IYwVEf.aC0Bke")
+let mic = finder.querySelector('.VfPpkd-Bz112c-Jh9lGc')
+
+var agoravai = document.querySelector('#ow3 > div.T4LgNb > div > div:nth-child(9) > div.crqnQb > div.R3Gmyc.qwU8Me > div:nth-child(3) > div.hWX4r > div.ggUFBf.Ze1Fpc > div.m3Uzve.RJRKn > div > div:nth-child(2) .EY8ABd-OWXEXe-TAWMXe')
+
 
 let todasMensagens = []
 let prevQtdTotalMsg = 0;
